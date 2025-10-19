@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burla Susmitha | Futuristic Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Quicksand:wght@400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: radial-gradient(circle at top left, #1a0029, #000);
+      color: #f8e9ff;
+      font-family: 'Quicksand', sans-serif;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: rgba(255, 182, 255, 0.1);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.6rem;
+      background: linear-gradient(90deg, #ff8bf2, #a855f7, #00d4ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: #fcdcff;
+      font-weight: 600;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: linear-gradient(90deg, #ff8bf2, #a855f7, #00d4ff);
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(to bottom right, rgba(255, 192, 255, 0.05), rgba(173, 216, 230, 0.05));
+      position: relative;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(90deg, #ff8bf2, #a855f7, #00d4ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 3s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff8bf2; }
+      to { text-shadow: 0 0 25px #00d4ff; }
+    }
+
+    .hero p {
+      color: #f5ccff;
+      max-width: 700px;
+      margin: 20px auto;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 30px;
+      border-radius: 30px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      color: #fff;
+      background: linear-gradient(90deg, #ff8bf2, #a855f7, #00d4ff);
+      box-shadow: 0 0 15px rgba(255, 182, 255, 0.6);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255, 182, 255, 0.9);
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 80px auto;
+      padding: 0 20px;
+    }
+
+    h3 {
+      text-align: center;
+      font-size: 2rem;
+      background: linear-gradient(90deg, #ff8bf2, #a855f7, #00d4ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 30px;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .skills-category {
+      margin-bottom: 30px;
+    }
+
+    .skills-category h4 {
+      color: #ffbdf7;
+      font-family: 'Orbitron', sans-serif;
+      margin-bottom: 10px;
+      text-align: left;
+      font-size: 1.3rem;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .skill {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 12px 20px;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(255, 182, 255, 0.1);
+    }
+
+    .skill:hover {
+      transform: translateY(-6px);
+      border-color: #ff8bf2;
+      box-shadow: 0 0 20px rgba(255, 182, 255, 0.3);
+    }
+
+    .contact-info {
+      text-align: center;
+      line-height: 1.8;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      font-size: 0.9rem;
+      color: #d3aefb;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.03);
+      margin-top: 80px;
+    }
+
+    .glow-circle {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #ffbdf7, transparent);
+      opacity: 0.2;
+      pointer-events: none;
+      transition: transform 0.1s ease;
+    }
+  </style>
+</head>
+<body>
+  <div class="glow-circle" id="glow"></div>
+
+  <header>
+    <h1>Burla Susmitha</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="about">
+    <h2>Hi, I'm Susmitha 💫</h2>
+    <p>Passionate BCA student with a creative touch for design and logic. Skilled in Python for backend automation and HTML/CSS for aesthetic front-end interfaces. Seeking opportunities to merge technology and creativity in futuristic web projects.</p>
+    <a class="btn" href="file:///C:/Users/Susmitha%20Burla/Downloads/susmitha_resume%20(6).pdf" target="_blank">View My Resume</a>
+  </section>
+
+  <section id="skills">
+    <h3>Technical Skills 💻</h3>
+
+    <div class="skills-category">
+      <h4>Programming Languages</h4>
+      <div class="skills-list">
+        <div class="skill">Python</div>
+        <div class="skill">Basics in C Language</div>
+      </div>
+    </div>
+
+    <div class="skills-category">
+      <h4>Data Analysis & Libraries</h4>
+      <div class="skills-list">
+        <div class="skill">NumPy</div>
+        <div class="skill">Pandas</div>
+        <div class="skill">Matplotlib</div>
+        <div class="skill">Visual Python</div>
+        <div class="skill">Tableau</div>
+      </div>
+    </div>
+
+    <div class="skills-category">
+      <h4>Database & Office Tools</h4>
+      <div class="skills-list">
+        <div class="skill">SQL</div>
+        <div class="skill">Excel</div>
+        <div class="skill">PowerPoint</div>
+        <div class="skill">Word</div>
+      </div>
+    </div>
+
+    <div class="skills-category">
+      <h4>AI & Automation</h4>
+      <div class="skills-list">
+        <div class="skill">ChatGPT</div>
+        <div class="skill">Prompt Engineering</div>
+        <div class="skill">AI-Powered Automation</div>
+      </div>
+    </div>
+
+    <div class="skills-category">
+      <h4>Tools & Operating Systems</h4>
+      <div class="skills-list">
+        <div class="skill">Visual Studio Code</div>
+        <div class="skill">Windows</div>
+        <div class="skill">Linux</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="achievements">
+    <h3>Achievements 🏆</h3>
+    <div class="skills-list">
+      <div class="skill">Python Programming Certification — NxtWave, CCBP 4.0 Academy: Completed a comprehensive course covering core Python concepts including data types, control structures, functions, and OOPs.
+<br>
+<a class="btn" href="https://drive.google.com/file/d/192SYrgktxAQIXTtafSKFGmOcswyQrLBU/view?usp=sharing" target="_blank">View My Certificate</a>
+
+</div>
+      <div class="skill">ChatGPT and AI Tools Certification — AITechnifAI: Learned to leverage AI tools for automation, productivity enhancement, and content generation with practical prompt engineering experience.
+<br>
+<a class = "btn" href="https://drive.google.com/file/d/1qGRynfA3qt_ZL3kcE7-omZ2AFmFGFcm4/view target="_blank">View My Certificate</a>
+</div>
+      <div class="skill">Python (Basic Level) Certification — APSSDC: Successfully completed foundational Python training focused on data handling and core programming skills.
+<br>
+<a class="btn" href="https://drive.google.com/file/d/1lsaPXdy0p1g2c_I4rXpYPsuzWV2ku6d6/view" target="_blank">View My Certificate</a>
+</div>
+    </div>
+  </section>
+
+  <section id="leadership">
+    <h3>Leadership Experience 👑</h3>
+    <div class="skills-list">
+      <div class="skill">Served as Class Representative, coordinating between students and faculty to resolve academic and administrative concerns effectively.</div>
+      <div class="skill">Organized major college events like Farewell and Freshers Party (Euphoria 2K25), managing logistics, planning, and execution.</div>
+      <div class="skill">Handled event budgeting and financial planning, ensuring efficient fund allocation and smooth event success.</div>
+      <div class="skill">Currently serving as President of the Rotary Club (Nominee Member), leading initiatives and coordinating community projects.</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h3>Let's Connect 💖</h3>
+    <div class="contact-info">
+      <p><strong>Email:</strong> <a href="mailto:susmithaburla8@gmail.com">susmithaburla8@gmail.com</a></p>
+      <p><strong>Phone:</strong> +91 7569996319</p>
+      <p><strong>Location:</strong> Guntur, Andhra Pradesh</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Burla Susmitha | Designed with 💖 Cosmic Energy & Creativity.</p>
+  </footer>
+
+  <script>
+    const glow = document.getElementById('glow');
+    document.addEventListener('mousemove', e => {
+      glow.style.transform = `translate(${e.clientX - 100}px, ${e.clientY - 100}px)`;
+    });
+  </script>
+</body>
+</html>
